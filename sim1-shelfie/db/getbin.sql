@@ -1,0 +1,1 @@
+SELECT * FROM items WHERE binid = $1;
