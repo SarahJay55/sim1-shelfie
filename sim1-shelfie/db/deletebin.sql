@@ -1,0 +1,1 @@
+Delete from items Where binid = $1

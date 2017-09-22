@@ -1,0 +1,1 @@
+UPDATE items SET (name, price) WHERE binid = $1
