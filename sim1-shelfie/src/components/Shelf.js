@@ -1,34 +1,57 @@
-import React from 'react';
+import React, {Component} from 'react';
+import axios from 'axios';
+import CreateBin from './CreateBin'
 
 
-export default function Shelf () {
-var shelfid = this.params.shelfid
-
-axios.get('/api/shelf/' + shelfid)
-.then(bins => {
-[{},{}, null, null, {}]
-})
-}
 
 
-bins.map((val, i) => {
-    if(null) {
-        <div>+ add inventory to bin</div>
-    } else {
-        <div>bin + {i}</div>
+class Shelf extends Component {
+     constructor() {
+         super()
+
+         this.state = {
+             binsArr: ["Temporary String"],
+             binFlag: false
+         }
+
+
+     }
+
+
+    getData() {
+        var arr = this.state.binsArr.data.map((e, i) => {
+            return (
+                <CreateBin
+                    id={e.id}
+                    name={e.name}
+                    price={e.price}
+                />
+            )
+        })
+        return arr;
     }
-})
+
+    componentDidMount() {
+        console.log(this.props.shelfid);
+        axios.get('http://localhost:3001/api/shelf/' + this.props.shelfid)
+        .then((bins) => {
+            this.setState({
+                binsArr: bins,
+                binFlag: true
+            })
+            console.log(this.state.binsArr.data);
+           
+        })
+    }
 
 
-export default function Home(props) {
+render() {
     return (
         <div>
-            <h1>Shelfie</h1>
-            <Link activeClassName="active" to="api/shelf/A">Bin 1</Link>
-            <Link activeClassName="active" to="api/shelf/B">Bin 2</Link>
-            <Link activeClassName="active" to="api/shelf/C">Bin 3</Link>
-            <Link activeClassName="active" to="api/shelf/D">Bin 4</Link>
-            {props.children}
+            {/* <p>{this.state.binsArr.data[0].name}</p> */}
+            {this.props.shelfid}
         </div>
     )
 }
+ }
+ export default Shelf
