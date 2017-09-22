@@ -1,1 +1,1 @@
-select * from items WHERE shelfid = $1
+select * from items where shelfid = $1
