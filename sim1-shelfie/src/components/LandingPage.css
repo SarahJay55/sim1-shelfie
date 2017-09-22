@@ -1,0 +1,39 @@
+.banner{
+    width: 100vw;
+    background-color: #860C0C;
+    height: 100px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 500%;
+    color: white;
+}
+.list{
+
+}
+
+.shelf{
+    font-weight: bold;
+    height: 20vh;
+    background-color: #2828BE;
+    border-style: solid;
+    border-color:white;
+    border-radius: 50%;
+    border-width: 20px;
+    align-self: auto;
+    text-align: center;
+    font-size: 450%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+    
+    
+}
+
+ul{
+    list-style-type: none;
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    color: #EB4BDD;
+    
+}

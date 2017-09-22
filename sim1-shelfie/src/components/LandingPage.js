@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './LandingPage.css'
 
 
 class LandingPage extends Component {
@@ -9,7 +10,7 @@ class LandingPage extends Component {
                     Shelf's and Bins
                 </div>
                 <div className="Shelves">
-                    <ul>
+                    <ul className="list">
                         <li className="shelf">Shelf A</li>                        
                         <li className="shelf">Shelf B</li>
                         <li className="shelf">Shelf C</li>
@@ -19,4 +20,4 @@ class LandingPage extends Component {
             </div>
         )
     }
-}
+} export default LandingPage

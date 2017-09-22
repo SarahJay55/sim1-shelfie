@@ -1,0 +1,29 @@
+.bins{
+    list-style-type: none;
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.bin{
+    font-weight: bold;
+    height: 20vh;
+    background-color: #101110;
+    border-style: solid;
+    border-color:white;
+    border-radius: 50%;
+    border-width: 20px;
+    align-self: auto;
+    text-align: center;
+    font-size: 450%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.list{
+    color: #E9DAE7;
+}
+
+.banner{
+    text-align: center;
+}
