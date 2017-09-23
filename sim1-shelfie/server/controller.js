@@ -4,11 +4,11 @@ module.exports = {
         const shelfId = req.params.shelfId
         db.getshelf([shelfId])
         .then(bins => {
-            console.log(bins);
+            
             res.status(200).send(bins);
         }) 
         .catch(err => {
-            console.log(err);
+           
             res.status(500).send(err);
         })
     },
@@ -60,6 +60,7 @@ module.exports = {
 
         db.deletebin([binId])
         .then(deleted => {
+            console.log(deleted);
             res.status(200).send(deleted);
         })
         .catch(err => {

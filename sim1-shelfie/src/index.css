@@ -3,3 +3,14 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.bin {
+  border: 1px solid black;
+}
+
+.add-to-bin {
+  border: 1px solid black;
+  height: 70px;
+  text-align: center;
+  padding-top: 25px;
+}

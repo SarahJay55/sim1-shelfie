@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 massive(process.env.CONNECTION_STRING).then(db => {
     app.set('db', db)
-    console.log("String");
+    
 });
 
 app.get('/hello', function(req, res, next) {

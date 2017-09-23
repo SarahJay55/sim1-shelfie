@@ -1,10 +1,11 @@
 import React from 'react'
-
+import '../index.css';
 function CreateBin(props) {
-    <div>
-        <h1>{props.name}</h1>
-        <h1>{props.price}</h1>
+    return (
+    <div className='bin'>
+        <h1>Bin {props.binNum + 1}</h1>
     </div>
+    )
 }
 
 export default CreateBin
