@@ -10,7 +10,7 @@ class Shelf extends Component {
          super()
 
          this.state = {
-             binsArr: ["Temporary String"],
+             binsArr: [],
              binFlag: false
          }
 
@@ -35,23 +35,47 @@ class Shelf extends Component {
         console.log(this.props.shelfid);
         axios.get('http://localhost:3001/api/shelf/' + this.props.shelfid)
         .then((bins) => {
+            if(bins.data.length < 5) {
+                var binLength = bins.data.length;
+                 var toFill = 5 - binLength;
+                 var binsArrCopy = bins.data.slice()
+                 for(var i=0; i < toFill; i++) {
+                     binsArrCopy.push(null);
+                 }
+                 this.setState({
+                     binsArr: binsArrCopy,
+                     binFlag: true
+                 })
+                 console.log(this.state.binsArr);
+            } else {
+
+            
             this.setState({
-                binsArr: bins,
+                binsArr: bins.data,
                 binFlag: true
             })
-            console.log(this.state.binsArr.data);
-           
+         
+        }
         })
     }
 
 
 render() {
-    return (
+     return (
+        //  <div>Hello</div>
         <div>
-            {/* <p>{this.state.binsArr.data[0].name}</p> */}
+            {
+                this.state.binFlag ? this.state.binsArr.map((e, i) => {
+                    return (
+                      !e ? <div className="add-to-bin">Add to bin</div> : <CreateBin binNum={i} price={e.price}/> 
+                    )
+                })
+                :
+                <div>Loading...</div>
+            }
             {this.props.shelfid}
         </div>
-    )
+     )
 }
  }
  export default Shelf
